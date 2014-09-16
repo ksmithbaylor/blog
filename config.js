@@ -11,20 +11,16 @@ config = {
         // The url to use when providing links to the site, E.g. in RSS and email.
         url: 'localhost:2369',
 
-        // Example mail config
-        // Visit http://support.ghost.org/mail for instructions
-        // ```
-        //  mail: {
-        //      transport: 'SMTP',
-        //      options: {
-        //          service: 'Mailgun',
-        //          auth: {
-        //              user: '', // mailgun username
-        //              pass: ''  // mailgun password
-        //          }
-        //      }
-        //  },
-        // ```
+        mail: {
+            transport: 'SMTP',
+            options: {
+                service: 'Mailgun',
+                auth: {
+                    user: 'postmaster@kevinjs.com', // mailgun username
+                    pass: '39anm-izjiz3'  // mailgun password
+                }
+            }
+        },
 
         database: {
             client: 'sqlite3',
