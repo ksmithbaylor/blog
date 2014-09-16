@@ -42,7 +42,16 @@ config = {
     // Configure your URL and mail settings here
     production: {
         url: 'http://blog.kevinjs.com',
-        mail: {},
+        mail: {
+            transport: 'SMTP',
+            options: {
+                service: 'Mailgun',
+                auth: {
+                    user: 'postmaster@kevinjs.com', // mailgun username
+                    pass: '39anm-izjiz3'  // mailgun password
+                }
+            }
+        },
         database: {
             client: 'postgres',
             connection: process.env.DATABASE_URL,
