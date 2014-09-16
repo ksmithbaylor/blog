@@ -9,7 +9,7 @@ config = {
     // ### Development **(default)**
     development: {
         // The url to use when providing links to the site, E.g. in RSS and email.
-        url: 'http://blog.kevinjs.com',
+        url: 'localhost:2369',
 
         // Example mail config
         // Visit http://support.ghost.org/mail for instructions
@@ -27,15 +27,14 @@ config = {
         // ```
 
         database: {
-            client: 'postgres',
-            connection: process.env.DATABASE_URL,
-            debug: false
+            client: 'sqlite3',
+            connection: {
+                filename: path.join(__dirname, '/content/data/ghost-test.db')
+            }
         },
         server: {
-            // Host to be passed to node's `net.Server#listen()`
-            host: '0.0.0.0',
-            // Port to be passed to node's `net.Server#listen()`, for iisnode set this to `process.env.PORT`
-            port: process.env.PORT
+            host: '127.0.0.1',
+            port: '2369'
         },
         paths: {
             contentPath: path.join(__dirname, '/content/')
